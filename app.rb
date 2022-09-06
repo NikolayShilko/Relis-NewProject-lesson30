@@ -61,7 +61,13 @@ get '/barber/:id' do
   @barber=Barber.find(params[:id])
   erb :barber
 end
+#вывод списка записавшихся в представлении booking.erb
 get '/booking' do
-  @client=Client.all
-  erb :booking
+  @client=Client.order('created_at DESC') # created_at DESC -сортировка списка по записавшимся(можно не)
+  erb :booking                             # использовать,стандартно ставим Client.all 
+end
+get '/clients/:id' do
+  #метод find для обработки url по id
+  @clients=Client.find(params[:id])
+  erb :client
 end
