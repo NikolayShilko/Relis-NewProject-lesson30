@@ -26,7 +26,9 @@ get '/' do
 	erb :index
 end
 get '/visit' do
+  @c=Client.new
 	erb :visit
+
 end
 post '/visit' do
 # Ламерский способ записив бд  
@@ -41,9 +43,15 @@ post '/visit' do
   #  c.barber=@barber
   #  c.save
   #Трушный способ записи в бд
-  c=Client.new params[:client]
-  c.save 
- 
-  erb "Уважаемый #{@username},ваш номер телефона #{@phone} мы ждём вас #{@datetime} у выбранного парикмахера #{@barber}."
+  @c=Client.new params[:client]
+  if @c.save 
+    erb "<h2> Спасибо, вы записались </h2>"
+  else
+    # вывод сообщения об ошибке
+     @error=@c.errors.full_messages.first
+     erb :visit
+
+ end
+  #erb "Уважаемый #{@username},ваш номер телефона #{@phone} мы ждём вас #{@datetime} у выбранного парикмахера #{@barber}."
 	
 end
