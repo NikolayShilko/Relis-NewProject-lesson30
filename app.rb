@@ -55,3 +55,7 @@ post '/visit' do
   #erb "Уважаемый #{@username},ваш номер телефона #{@phone} мы ждём вас #{@datetime} у выбранного парикмахера #{@barber}."
 	
 end
+#универсальный обработчик списка barberов
+get '/barber/:id' do
+  erb :barber
+end
