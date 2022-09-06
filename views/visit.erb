@@ -5,21 +5,21 @@
 
   <div class="form-group">
     <label>Ваше имя</label>
-    <input name="username" type="text" class="form-control" placeholder="Ваше имя" value="<%=@username%>"
+    <input name="client[name]" type="text" class="form-control" placeholder="Ваше имя" value=""
   </div>
 
   <div class="form-group">
     <label>Ваш телефон</label>
-    <input id='aaa' name="phone" type="text" class="form-control" placeholder="Ваш телефон" value="<%=@phone%>">
+    <input id='aaa' name="client[phone]" type="text" class="form-control" placeholder="Ваш телефон" value="">
   </div>
 
   <div class="form-group">
     <label>Когда вас ждать?</label>
-    <input  input id="datetimepicker" type="text" name="datetime" type="text" class="form-control " placeholder="Введите дату и время">
+    <input  input id="datetimepicker" type="text" name="client[datestamp]" type="text" class="form-control " placeholder="Введите дату и время">
   </div>
    
     <div class="form-group">
-   <select name="barber" class="form-select" multiple aria-label="multiple select example">
+   <select name="client[barber]" class="form-select" multiple aria-label="multiple select example">
   <option selected>Выберите мастера</option>
   <option value="Ivan Ivanov">Иван Иванов</option>
   <option value="Masha Chukina">Маша Щукина</option>
