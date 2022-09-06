@@ -8,7 +8,7 @@ set :database, {adapter:"sqlite3",database: "barbershop.db"}
 
 class Client < ActiveRecord::Base
   # подключение валидации
-  validates :name,presence: true
+  validates :name,presence: true,length: {minimum: 3}
   validates :phone,presence: true
   validates :datestamp,presence: true
   validates :barber,presence: true
