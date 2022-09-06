@@ -1,0 +1,66 @@
+<h2>Записаться</h2>
+<p>На этой странице вы сможете записаться к нам в Barber Shop</p>
+
+<form action="/visit" method="POST" role="form">
+
+  <div class="form-group">
+    <label>Ваше имя</label>
+    <input name="username" type="text" class="form-control" placeholder="Ваше имя" value="<%=@username%>"
+  </div>
+
+  <div class="form-group">
+    <label>Ваш телефон</label>
+    <input id='aaa' name="phone" type="text" class="form-control" placeholder="Ваш телефон" value="<%=@phone%>">
+  </div>
+
+  <div class="form-group">
+    <label>Когда вас ждать?</label>
+    <input  input id="datetimepicker" type="text" name="datetime" type="text" class="form-control " placeholder="Введите дату и время">
+  </div>
+   
+    <div class="form-group">
+   <select name="barber" class="form-select" multiple aria-label="multiple select example">
+  <option selected>Выберите мастера</option>
+  <option value="Ivan Ivanov">Иван Иванов</option>
+  <option value="Masha Chukina">Маша Щукина</option>
+  <option value="Kukushkin">Кукушкин</option>
+  </select>
+  </div>
+   
+  <button class="btn btn-primary" type="submit">Отправить</button>
+  <div class="form-group">
+  <div class="form-group">
+  <label>В какие цвета краситься?</label> 
+  <select id='color' input name="color">
+  <option value="#7bd148">Green</option>
+  <option value="#5484ed">Bold blue</option>
+  <option value="#a4bdfc">Blue</option>
+  <option value="#46d6db">Turquoise</option>
+  <option value="#7ae7bf">Light green</option>
+  <option value="#51b749">Bold green</option>
+  <option value="#fbd75b">Yellow</option>
+  <option value="#ffb878">Orange</option>
+  <option value="#ff887c">Red</option>
+  <option value="#dc2127">Bold red</option>
+  <option value="#dbadff">Purple</option>
+  <option value="#e1e1e1">Gray</option>
+  </div>
+</select>
+
+
+<script type="text/javascript">
+  $ (function (){
+    $('#color').simplecolorpicker();
+    //$('#datetimepicker').datetimepicker(); //плагин календаря (не удалось запустить)
+  });
+</script>
+  
+<script type="text/javascript">                // Цвет поля ввода где id=aaa
+//  $('#aaa').css('background-color', "yellow");
+
+</script>
+<script type="text/javascript">
+// alert('Hello!');                       //Вывод приветствия в вкладке
+</script>
+</div>
+</form>
