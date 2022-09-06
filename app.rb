@@ -57,5 +57,11 @@ post '/visit' do
 end
 #универсальный обработчик списка barberов
 get '/barber/:id' do
+  #метод find для обработки url по id
+  @barber=Barber.find(params[:id])
   erb :barber
+end
+get '/booking' do
+  @client=Client.all
+  erb :booking
 end
