@@ -7,7 +7,13 @@ require 'sinatra/activerecord'
 set :database, {adapter:"sqlite3",database: "barbershop.db"}
 
 class Client < ActiveRecord::Base
+  # подключение валидации
+  validates :name,presence: true
+  validates :phone,presence: true
+  validates :datestamp,presence: true
+  validates :barber,presence: true
 end
+
 class Barber < ActiveRecord::Base
 end
 
@@ -23,6 +29,7 @@ get '/visit' do
 	erb :visit
 end
 post '/visit' do
+# Ламерский способ записив бд  
 #	@username=params[:username]
 #	@phone = params[:phone]
  #   @datetime = params[:datetime]
@@ -33,6 +40,7 @@ post '/visit' do
   #  c.datestamp=@datetime
   #  c.barber=@barber
   #  c.save
+  #Трушный способ записи в бд
   c=Client.new params[:client]
   c.save 
  
